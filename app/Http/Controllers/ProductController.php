@@ -42,7 +42,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return Product::find($product);
     }
 
     /**
@@ -54,7 +54,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        // $newProduct = Product::find($product);
+        // $newProduct->update($request->all());
+        // return $newProduct;
+        return $product->update($request->all());
     }
 
     /**
@@ -65,6 +68,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        return $product->delete();
     }
 }
